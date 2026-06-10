@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>小红书卡片</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1440px;
+      overflow: hidden;
+      background: #fff;
+      font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    }
+
+    .card {
+      width: 1080px;
+      height: 1440px;
+      background: #fff;
+      padding: 88px 84px 80px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand {
+      font-size: 24px;
+      font-weight: 400;
+      color: #c0c0c0;
+      letter-spacing: 0.04em;
+      margin-bottom: 64px;
+    }
+
+    .body {
+      font-size: 32px;
+      color: #1a1a1a;
+      line-height: 1.9;
+      font-weight: 400;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .body p {
+      margin-bottom: 36px;
+    }
+
+    .body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .body strong {
+      font-weight: 700;
+      color: #111;
+    }
+
+    .page-num {
+      margin-top: 60px;
+      font-size: 26px;
+      color: #ddd;
+      font-weight: 300;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">{{BRAND}}</div>
+    <div class="body">{{CONTENT}}</div>
+    <div class="page-num">{{PAGE}}</div>
+  </div>
+</body>
+</html>
