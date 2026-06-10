@@ -9,7 +9,7 @@
 - 白底纯文字，无装饰
 - 1080×1440px（标准小红书比例）
 - 顶部账号名水印
-- 支持多张分页（用 `---` 分隔）
+- **内容自动分页**（CSS 多列布局，按行边界切分，无需手动插入分隔符）
 - 支持 `**加粗**` 语法
 
 ## 快速开始
@@ -17,7 +17,7 @@
 ### 安装依赖
 
 ```bash
-pip install playwright
+pip install playwright pillow
 playwright install chromium
 ```
 
