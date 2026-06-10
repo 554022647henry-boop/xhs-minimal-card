@@ -10,8 +10,6 @@
 
     body {
       width: 1080px;
-      height: 1440px;
-      overflow: hidden;
       background: #fff;
       font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
     }
@@ -20,9 +18,10 @@
       width: 1080px;
       height: 1440px;
       background: #fff;
-      padding: 88px 84px 80px;
+      padding: 80px 84px 72px;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
 
     .brand {
@@ -30,7 +29,18 @@
       font-weight: 400;
       color: #c0c0c0;
       letter-spacing: 0.04em;
-      margin-bottom: 64px;
+      margin-bottom: 56px;
+      flex-shrink: 0;
+    }
+
+    /* 内容窗口：固定高度，溢出隐藏，通过 translateY 移动内容 */
+    .content-window {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .content-scroll {
+      transform: translateY({{OFFSET}}px);
     }
 
     .body {
@@ -38,8 +48,6 @@
       color: #1a1a1a;
       line-height: 1.9;
       font-weight: 400;
-      flex: 1;
-      overflow: hidden;
     }
 
     .body p {
@@ -56,18 +64,23 @@
     }
 
     .page-num {
-      margin-top: 60px;
+      margin-top: 40px;
       font-size: 26px;
       color: #ddd;
       font-weight: 300;
       text-align: right;
+      flex-shrink: 0;
     }
   </style>
 </head>
 <body>
   <div class="card">
     <div class="brand">{{BRAND}}</div>
-    <div class="body">{{CONTENT}}</div>
+    <div class="content-window">
+      <div class="content-scroll">
+        <div class="body">{{CONTENT}}</div>
+      </div>
+    </div>
     <div class="page-num">{{PAGE}}</div>
   </div>
 </body>
